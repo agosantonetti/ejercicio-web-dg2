@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!--Elemento <head> provee información general (metadatos) del documento, incluyendo título y enlaces a las hojas de estilos.-->
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Nivel 2 Belluccia</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+        <!-- Iconos de Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- Tipografías de Google-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+
+        <!-- Estilos CSS (incluye Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            :root {
+                --bg-blue: #334999;
+                --bg-orange: #e84715;
+                --text-white: #ffffff;
+                --font-main: 'Inter', sans-serif;
+            }
+
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            html,
+            body {
+                margin: 0;
+                font-family: var(--font-main);
+            }
+
+            body {
+                background-color: transparent;
+            }
+
+            /* Navbar superior */
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                background-color: var(--bg-blue); /* #334999 */
+                padding: 1.2rem 8%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-logo-link {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .nav-logo {
+                height: 35px;
+                width: auto;
+            }
+
+            .nav-links {
+                display: flex;
+                gap: 35px;
+                align-items: center;
+            }
+
+            .nav-item {
+                font-family: var(--font-main);
+                font-size: 1rem;
+                font-weight: 500;
+                color: #ffffff;
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+
+            .nav-item:hover,
+            .nav-item.active {
+                color: #e84715;
+            }
+
+            button,
+            input,
+            textarea,
+            select {
+                font-family: inherit;
+            }
+
+            h1 {
+                color: #FF689D;
+            }
+
+            #hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: 9rem 0 6rem;
+                background-color: #000000;
+                background-image: url("assets/img/alex_moni_img.jpg");
+                background-position: right center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            #hero .container {
+                width: 100%;
+                max-width: none;
+                padding-left: clamp(1.5rem, 4vw, 4rem) !important;
+                padding-right: clamp(1.5rem, 4vw, 4rem) !important;
+            }
+
+            .hero-content {
+                max-width: 920px;
+            }
+
+            .hero-tag {
+                display: inline-flex;
+                align-items: center;
+                padding: 0.55rem 0.9rem;
+                margin-bottom: 1.4rem;
+                background-color: var(--text-white);
+                color: #000000;
+                font-size: clamp(1.07rem, 1.9vw, 2rem);
+                font-weight: 700;
+                line-height: 1;
+            }
+
+            #hero h1 {
+                margin: 0;
+                color: var(--text-white);
+                font-size: clamp(1.6rem, 2.85vw, 3rem);
+                font-weight: 700;
+                line-height: 0.95;
+            }
+
+            .hero-title-line {
+                display: block;
+                white-space: nowrap;
+            }
+
+            #hero .hero-description {
+                max-width: 640px;
+                margin: 1.5rem 0 0;
+                color: var(--text-white);
+                font-size: clamp(0.6rem, 1vw, 0.775rem);
+                font-weight: 400;
+                line-height: 1.35;
+            }
+
+            .hero-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 2.2rem;
+                padding: 0.5rem 1.2rem;
+                margin-top: 1.5rem;
+                border: 2px solid var(--bg-orange);
+                background-color: transparent;
+                color: var(--bg-orange);
+                font-size: 0.75rem;
+                font-weight: 700;
+                line-height: 1;
+                text-decoration: none;
+            }
+
+            .hero-button:hover,
+            .hero-button:focus {
+                background-color: var(--bg-orange);
+                color: var(--text-white);
+            }
+
+            @media (max-width: 991.98px) {
+                #hero {
+                    min-height: 86vh;
+                    padding: 7rem 0 4.5rem;
+                    background-image: url("assets/img/alex_moni_img.jpg");
+                }
+
+                .hero-title-line {
+                    white-space: normal;
+                }
+            }
+
+            header.masthead h1 {
+                font-family: var(--font-main);
+                font-size: clamp(4rem, 9vw, 7rem);
+                line-height: 0.95;
+            }
+
+            header.masthead p {
+                font-size: clamp(2rem, 3.5vw, 2.5rem);
+                line-height: 1.15;
+            }
+
+            .bg-gradient-primary-to-secondary {
+                background: linear-gradient(45deg, #FF689D, #8c4966) !important;
+            }
+
+            .text-gradient {
+                background: linear-gradient(45deg, #FF689D, #8c4966);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .custom-line-icon {
+                width: 6rem;
+                height: 6rem;
+                fill: none;
+                stroke: url(#icon-gradient);
+                stroke-width: 1.7;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+
+            #footer {
+                background-color: #e84715;
+                padding: 30px 8%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: #ffffff;
+                font-family: var(--font-main);
+            }
+
+            #footer a {
+                color: #ffffff;
+                text-decoration: none;
+                margin-left: 20px;
+                font-weight: 400;
+                transition: font-weight 0.2s ease, text-decoration 0.2s ease, opacity 0.2s ease;
+            }
+
+            #footer a:hover {
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            #footer a:disabled,
+            #footer a.disabled {
+                font-weight: 300;
+                color: #ffffff;
+                opacity: 0.5;
+                text-decoration: none;
+                pointer-events: none;
+            }
+
+            .footer-links {
+                display: flex;
+                align-items: center;
+            }
+
+            .duotone-image {
+                display: inline-block;
+                position: relative;
+                background: linear-gradient(135deg, #FF689D, #8c4966);
+                overflow: hidden;
+            }
+
+            .duotone-image img {
+                display: block;
+                filter: grayscale(1) contrast(1.85) brightness(0.9);
+                mix-blend-mode: hard-light;
+            }
+
+            .duotone-image::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: #FF689D;
+                mix-blend-mode: screen;
+                pointer-events: none;
+            }
+
+            .quote-banner {
+                background-color: #e84715;
+                width: 100%;
+                padding: 60px 20px;
+            }
+
+            .quote-banner h2 {
+                color: #ffffff;
+                text-align: center;
+                font-style: italic;
+                margin: 0;
+            }
+
+            /* Perfil de Aleksandar (ID alex) */
+            .bio-section {
+                background-color: var(--bg-blue); /* #334999 */
+                padding: 5rem 8%;
+                color: #ffffff;
+            }
+
+            .bio-container {
+                display: flex;
+                gap: 60px;
+                align-items: flex-start;
+            }
+
+            .bio-left-col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bio-right-col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bio-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                width: 100%;
+                margin-bottom: 1rem;
+                gap: 15px;
+            }
+
+            .bio-name h2 {
+                margin: 0;
+                font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+                font-weight: 400;
+                line-height: 1.1;
+            }
+
+            .bio-name h2 span {
+                display: block;
+                font-weight: 700;
+            }
+
+            .bio-image-wrapper {
+                width: 100%;
+            }
+
+            .marco-blanco-alex {
+                background-color: transparent;
+                padding: 0;
+                border-radius: 80px 24px 80px 24px;
+                overflow: visible;
+                transition: background-color 0.3s ease;
+            }
+
+            .marco-blanco-alex img {
+                border-radius: inherit;
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            .marco-blanco-alex:hover {
+                background-color: #ffffff;
+            }
+
+            .marco-blanco-alex:hover img {
+                transform: translate(-12px, -12px);
+            }
+
+            .btn-outline-orange {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.5rem 1.2rem;
+                border: 2px solid var(--bg-orange); /* #e84715 */
+                background-color: transparent;
+                color: var(--bg-orange);
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-decoration: none;
+                transition: background-color 0.2s, color 0.2s;
+                margin-bottom: 4px;
+            }
+
+            .btn-outline-orange:hover {
+                background-color: var(--bg-orange);
+                color: #ffffff;
+            }
+
+            .bio-block-icon {
+                width: 32px;
+                height: 32px;
+                margin-bottom: 1.2rem;
+                display: block;
+            }
+
+            /* Ficha técnica grid */
+            .bio-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+                padding-bottom: 2.5rem;
+                margin-bottom: 2.5rem;
+                width: 100%;
+            }
+
+            .bio-grid-col {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .bio-grid-item {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .bio-item-title {
+                color: #ffffff;
+                font-size: 0.95rem;
+                font-weight: 500;
+                margin-bottom: 0.25rem;
+            }
+
+            .bio-item-value {
+                color: #ffffff;
+                font-size: 0.85rem;
+                font-weight: 300;
+                line-height: 1.4;
+            }
+
+            /* Logros */
+            .achievements-section {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+            }
+
+            .achievement-item {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .achievement-content h4 {
+                margin: 0 0 0.2rem;
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: #ffffff;
+            }
+
+            .achievement-content p {
+                margin: 0;
+                color: #ffffff;
+                font-size: 0.85rem;
+                font-weight: 300;
+                line-height: 1.4;
+            }
+
+            /* Responsive para bio-section */
+            @media (max-width: 991.98px) {
+                .bio-container {
+                    flex-direction: column;
+                    gap: 40px;
+                }
+                .bio-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+                .bio-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 10px;
+                }
+            }
+
+            /* Perfil de Simeon (Moni) */
+            .bio-moni-image {
+                width: 100%;
+                height: auto;
+                border-radius: 80px 24px 80px 24px;
+                object-fit: cover;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .bio-moni-image:hover {
+                transform: translate(-10px, -10px);
+                box-shadow: 10px 10px 0px 0px #ffffff;
+            }
+        </style>
+    </head>
+
+
+    <!--El elemento <body> define el cuerpo del HTML, es decir, todo el contenido *visible* en una página web.-->
+    <body id="page-top">
+
+        <!-- Navegación (barra superior)-->
+        <nav class="navbar">
+            <!-- Contenedor del Logo de la FIVB -->
+            <a href="#hero" class="nav-logo-link">
+                <img src="assets/logo_fivb.svg" alt="Logo FIVB" class="nav-logo">
+            </a>
+            
+            <!-- Enlaces de Navegación del Menú Derecha -->
+            <div class="nav-links">
+                <a href="#hero" class="nav-item">Inicio</a>
+                <a href="#quote-banner" class="nav-item">Cita</a>
+                <a href="#alex" class="nav-item">Alex</a>
+                <a href="#moni" class="nav-item">Moni</a>
+            </div>
+        </nav>
+
+
+        <!-- Portada-->
+        <header class="masthead" id="hero">
+            <div class="container px-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6">
+
+                        <!-- Texto de la portada-->
+                        <div class="hero-content">
+                            <span class="hero-tag">Alex y Moni Nikolov:</span>
+                            <h1>
+                                <span class="hero-title-line">Las estrellas búlgaras</span>
+                                <span class="hero-title-line">del volleyball de</span>
+                                <span class="hero-title-line">la Generación Z</span>
+                            </h1>
+                            <p class="hero-description">Los hermanos Nikolov están reviviendo la tradición búlgara del Campeonato Mundial rompiendo récords.</p>
+                            <a class="hero-button" href="https://www.youtube.com/watch?v=Cd4ewKbyxZ0" target="_blank" rel="noopener noreferrer">Mirar highlights</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quote Banner -->
+        <section class="quote-banner" id="quote-banner">
+            <h2>“Trust the process”</h2>
+        </section>
+
+        <!-- Perfil de Aleksandar -->
+        <section id="alex" class="bio-section">
+            <div class="bio-container">
+                <!-- Columna Izquierda: Nombre, Botón e Imagen -->
+                <div class="bio-left-col">
+                    <div class="bio-header">
+                        <div class="bio-name">
+                            <h2>Aleksandar Vladimir <span>Nikolov</span></h2>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=9HRmeTqhdJo" target="_blank" rel="noopener noreferrer" class="btn-outline-orange">Mirar highlights</a>
+                    </div>
+                    <div class="bio-image-wrapper">
+                        <div class="marco-blanco-alex">
+                            <img src="assets/img/alex_img.webp" alt="Aleksandar Vladimir Nikolov" class="bio-main-image" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Ficha Técnica y Logros -->
+                <div class="bio-right-col">
+                    <!-- Icono Pelota arriba de la ficha técnica -->
+                    <img src="assets/icono_pelota.svg" alt="Pelota" class="bio-block-icon" />
+
+                    <!-- Ficha Técnica -->
+                    <div class="bio-grid">
+                        <div class="bio-grid-col">
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Posición</span>
+                                <div class="bio-item-value">Punta / Atacante exterior</div>
+                            </div>
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Equipo actual</span>
+                                <div class="bio-item-value">Cucine Lube Civitanova, Italia y Selección Nacional de Bulgaria</div>
+                            </div>
+                        </div>
+                        <div class="bio-grid-col">
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Altura</span>
+                                <div class="bio-item-value">2,07 mts</div>
+                            </div>
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Edad</span>
+                                <div class="bio-item-value">22 años</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icono Medalla arriba de los logros -->
+                    <img src="assets/icono_medalla.svg" alt="Medalla" class="bio-block-icon" />
+
+                    <!-- Sección de Logros -->
+                    <div class="achievements-section">
+                        <div class="achievement-item">
+                            <div class="achievement-content">
+                                <h4>Voleibol Mundial 2025</h4>
+                                <p>#2 Mejor Jugador de Voleibol Masculino del Año 2025</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-content">
+                                <h4>Campeonato Mundial FIVB 2025</h4>
+                                <p>Mejor atacante exterior y mejor anotador</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfil de Simeon -->
+        <section id="moni" class="bio-section" style="border-top: 1px solid rgba(255, 255, 255, 0.1);">
+            <div class="bio-container">
+                <!-- Columna Izquierda: Ficha Técnica y Logros (Invertido) -->
+                <div class="bio-left-col">
+                    <!-- Icono Pelota arriba de la ficha técnica -->
+                    <img src="assets/icono_pelota.svg" alt="Pelota" class="bio-block-icon" />
+
+                    <!-- Ficha Técnica -->
+                    <div class="bio-grid">
+                        <div class="bio-grid-col">
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Posición</span>
+                                <div class="bio-item-value">Armador / Colocador</div>
+                            </div>
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Equipo actual</span>
+                                <div class="bio-item-value">Lokomotiv Novosibirsk, Rusia y Selección Nacional de Bulgaria</div>
+                            </div>
+                        </div>
+                        <div class="bio-grid-col">
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Altura</span>
+                                <div class="bio-item-value">2,09 mts</div>
+                            </div>
+                            <div class="bio-grid-item">
+                                <span class="bio-item-title">Edad</span>
+                                <div class="bio-item-value">19 años</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icono Medalla arriba de los logros -->
+                    <img src="assets/icono_medalla.svg" alt="Medalla" class="bio-block-icon" />
+
+                    <!-- Sección de Logros -->
+                    <div class="achievements-section">
+                        <div class="achievement-item">
+                            <div class="achievement-content">
+                                <h4>Campeonato Nacional de la NCAA 2025</h4>
+                                <p>Campeón nacional, Jugador del Año y mejor colocador</p>
+                            </div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-content">
+                                <h4>Campeonato Europeo CEV Sub-20 2024</h4>
+                                <p>Medallista de oro y mejor armador del torneo europeo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Nombre, Botón e Imagen -->
+                <div class="bio-right-col">
+                    <div class="bio-header">
+                        <div class="bio-name">
+                            <h2>Simeon Vladimirov <span>Nikolov</span></h2>
+                        </div>
+                        <a href="https://www.youtube.com/watch?v=QBzopqDRO4E" target="_blank" rel="noopener noreferrer" class="btn-outline-orange">Mirar highlights</a>
+                    </div>
+                    <div class="bio-image-wrapper">
+                        <img src="assets/img/moni_img.webp" alt="Simeon Vladimirov Nikolov" class="bio-moni-image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- Pie de página (footer) -->
+        <footer id="footer">
+            <div>Simeon y Aleksandar Nikolov</div>
+            <div class="footer-links">
+                <a href="https://www.instagram.com/alex11nikolov/?hl=es" target="_blank" rel="noopener noreferrer">Alex</a>
+                <a href="https://www.instagram.com/mnikolow1/?hl=es" target="_blank" rel="noopener noreferrer">Moni</a>
+                <a href="https://www.instagram.com/agosantonetti_dg/?hl=es" target="_blank" rel="noopener noreferrer">Diseñado por Agos</a>
+            </div>
+        </footer>
+
+
+        <!-- JavaScript de Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        
+        <!-- JavaScript del sitio-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
